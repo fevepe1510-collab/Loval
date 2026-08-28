@@ -6,6 +6,22 @@
   <meta name="theme-color" content="#0b0a0a" />
   <meta name="description" content="Agenda tu valoración con Albert León Hair. Color, maquillaje, productos y atención personalizada por WhatsApp." />
   <title>LEVORA · Albert León Hair</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1702072777569122');
+  fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -22,6 +38,8 @@
   </style>
 </head>
 <body>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1702072777569122&ev=PageView&noscript=1" /></noscript>
+
   <div class="video-bg" aria-hidden="true">
     <video id="bg1" class="active" autoplay muted playsinline preload="auto"><source src="/levora-bg-1.mp4" type="video/mp4"></video>
     <video id="bg2" autoplay muted playsinline preload="metadata"><source src="/levora-bg-2.mp4" type="video/mp4"></video>
@@ -35,7 +53,7 @@
 
   <main class="page">
     <header class="topbar"><div class="monogram" aria-label="LEVORA">L</div><a class="instagram-top" href="https://www.instagram.com/albertleonhair/" target="_blank" rel="noopener noreferrer" data-meta-event="InstagramClick" data-service="instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.6" r=".7" fill="currentColor" stroke="none"/></svg>Instagram</a></header>
-    <section class="hero" aria-labelledby="title"><div class="eyebrow">Hair Studio</div><h1 id="title">LEVORA</h1><a class="handle" href="https://www.instagram.com/albertleonhair/" target="_blank" rel="noopener noreferrer">@albertleonhair</a><div class="hero-copy">Tu próxima transformación empieza con una valoración.</div><p class="hero-sub">Cuéntanos qué quieres lograr y te orientamos por WhatsApp para encontrar el servicio ideal para ti.</p><a class="primary" href="https://wa.me/573115554665?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Albert%20Le%C3%B3n%20Hair%20y%20quiero%20solicitar%20una%20valoraci%C3%B3n%20para%20mi%20cabello." target="_blank" rel="noopener noreferrer" data-meta-event="LeadIntent" data-service="valoracion"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4A8.4 8.4 0 1 1 20.5 11.7Z"/></svg>Solicitar valoración</a></section>
+    <section class="hero" aria-labelledby="title"><div class="eyebrow">Hair Studio</div><h1 id="title">LEVORA</h1><a class="handle" href="https://www.instagram.com/albertleonhair/" target="_blank" rel="noopener noreferrer" data-meta-event="InstagramClick" data-service="instagram_handle">@albertleonhair</a><div class="hero-copy">Tu próxima transformación empieza con una valoración.</div><p class="hero-sub">Cuéntanos qué quieres lograr y te orientamos por WhatsApp para encontrar el servicio ideal para ti.</p><a class="primary" href="https://wa.me/573115554665?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Albert%20Le%C3%B3n%20Hair%20y%20quiero%20solicitar%20una%20valoraci%C3%B3n%20para%20mi%20cabello." target="_blank" rel="noopener noreferrer" data-meta-event="LeadIntent" data-service="valoracion"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4A8.4 8.4 0 1 1 20.5 11.7Z"/></svg>Solicitar valoración</a></section>
     <div class="section-label">¿Qué estás buscando?</div>
     <nav class="links" aria-label="Servicios y enlaces">
       <a class="service" href="https://wa.me/573115554665?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Albert%20Le%C3%B3n%20Hair%20y%20quiero%20agendar%20una%20cita." target="_blank" rel="noopener noreferrer" data-meta-event="WhatsAppClick" data-service="agenda"><span class="disc"><svg viewBox="0 0 40 40"><rect x="9" y="11" width="22" height="20" rx="3"/><path d="M14 8v6M26 8v6M9 17h22M15 23h4M22 23h4"/></svg></span><span class="label">Agenda</span></a>
@@ -66,7 +84,29 @@
       }
     });
 
-    document.addEventListener('click',function(event){const link=event.target.closest('[data-meta-event]');if(!link)return;const eventName=link.dataset.metaEvent;const service=link.dataset.service||'';if(typeof window.fbq==='function'){window.fbq('trackCustom',eventName,{service})}});
+    // Señal de consumo real de la landing.
+    if(typeof window.fbq==='function'){
+      window.fbq('track','ViewContent',{content_name:'Albert Leon Hair Landing'});
+    }
+
+    // Conversiones: todos los clics hacia WhatsApp se concentran en Contact,
+    // diferenciados por el parámetro service. Instagram queda como evento secundario.
+    document.addEventListener('click',function(event){
+      const link=event.target.closest('a');
+      if(!link || typeof window.fbq!=='function') return;
+
+      const href=link.getAttribute('href')||'';
+      const service=link.dataset.service||'general';
+
+      if(href.includes('wa.me/')){
+        window.fbq('track','Contact',{service:service,destination:'whatsapp'});
+        return;
+      }
+
+      if(href.includes('instagram.com/')){
+        window.fbq('trackCustom','InstagramClick',{service:service});
+      }
+    });
   </script>
 </body>
 </html>
