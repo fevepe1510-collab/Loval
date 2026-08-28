@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0a0a" />
+  <meta name="description" content="Agenda tu valoración con Albert León Hair. Color, maquillaje, productos y atención personalizada por WhatsApp." />
+  <title>LEVORA · Albert León Hair</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0b0a0a;
+      --bg-soft:#161311;
+      --text:#fff;
+      --muted:rgba(255,255,255,.68);
+      --faint:rgba(255,255,255,.46);
+      --gold:#e6c9a0;
+      --gold-soft:#f0ddc1;
+      --glass:rgba(255,255,255,.08);
+      --line:rgba(255,255,255,.19);
+      --shadow:0 22px 70px rgba(0,0,0,.46);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      min-height:100vh;
+      min-height:100dvh;
+      color:var(--text);
+      font-family:"Jost",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%,rgba(230,201,160,.16),transparent 28%),
+        radial-gradient(circle at 85% 28%,rgba(255,255,255,.06),transparent 30%),
+        linear-gradient(145deg,#171310 0%,#0b0a0a 48%,#080707 100%);
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.24;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+      background-size:44px 44px;
+      mask-image:linear-gradient(to bottom,#000,transparent 72%);
+    }
+
+    a{color:inherit}
+
+    .page{
+      width:min(100%,760px);
+      min-height:100dvh;
+      margin:0 auto;
+      padding:max(30px,env(safe-area-inset-top)) 22px max(28px,env(safe-area-inset-bottom));
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      z-index:1;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:52px;
+    }
+
+    .monogram{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(230,201,160,.5);
+      background:rgba(255,255,255,.035);
+      font-family:"Fraunces",serif;
+      font-size:17px;
+      letter-spacing:.04em;
+    }
+
+    .instagram-top{
+      text-decoration:none;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition:.2s ease;
+    }
+
+    .instagram-top:hover{color:var(--gold)}
+
+    .instagram-top svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7}
+
+    .hero{text-align:center}
+
+    .eyebrow{
+      font-size:11px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:12px;
+    }
+
+    h1{
+      margin:0;
+      font-family:"Fraunces",serif;
+      font-weight:300;
+      font-size:clamp(54px,14vw,88px);
+      line-height:.95;
+      letter-spacing:-.035em;
+    }
+
+    .handle{
+      display:inline-block;
+      margin-top:12px;
+      text-decoration:none;
+      font-size:12px;
+      letter-spacing:.09em;
+      color:var(--muted);
+    }
+
+    .hero-copy{
+      max-width:535px;
+      margin:30px auto 0;
+      font-family:"Fraunces",serif;
+      font-size:clamp(24px,6vw,36px);
+      font-weight:300;
+      line-height:1.15;
+    }
+
+    .hero-sub{
+      max-width:480px;
+      margin:15px auto 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .primary{
+      width:min(100%,460px);
+      min-height:58px;
+      margin:28px auto 0;
+      padding:0 24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:999px;
+      color:#16110d;
+      background:linear-gradient(135deg,var(--gold-soft),var(--gold));
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:.105em;
+      font-size:12px;
+      font-weight:600;
+      box-shadow:0 15px 45px rgba(230,201,160,.13);
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+
+    .primary:hover{transform:translateY(-2px);box-shadow:0 18px 52px rgba(230,201,160,.22)}
+    .primary:active{transform:translateY(0)}
+
+    .primary svg{width:18px;height:18px;fill:currentColor}
+
+    .section-label{
+      margin:52px 0 19px;
+      text-align:center;
+      font-size:10px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--faint);
+    }
+
+    .links{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:16px 10px;
+    }
+
+    .service{
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      text-align:center;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .disc{
+      width:clamp(78px,23vw,102px);
+      aspect-ratio:1;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:var(--glass);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08),var(--shadow);
+      transition:.22s ease;
+    }
+
+    .service:hover .disc,
+    .service:focus-visible .disc{
+      transform:translateY(-4px);
+      border-color:rgba(230,201,160,.66);
+      background:rgba(255,255,255,.12);
+    }
+
+    .service:focus-visible{outline:none}
+
+    .disc svg{
+      width:37%;
+      height:37%;
+      fill:none;
+      stroke:#fff;
+      stroke-width:1.6;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .label{
+      min-height:30px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      font-size:10.5px;
+      line-height:1.25;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .trust{
+      width:min(100%,560px);
+      margin:46px auto 0;
+      padding:20px 22px;
+      border:1px solid rgba(255,255,255,.11);
+      border-radius:22px;
+      background:rgba(255,255,255,.035);
+      text-align:center;
+    }
+
+    .trust strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--gold);
+      font-family:"Fraunces",serif;
+      font-size:18px;
+      font-weight:400;
+    }
+
+    .trust span{font-size:12px;line-height:1.55;color:var(--muted)}
+
+    footer{
+      margin-top:auto;
+      padding-top:48px;
+      text-align:center;
+      color:var(--faint);
+      font-size:10px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    @media (min-width:680px){
+      .page{padding-left:34px;padding-right:34px}
+      .topbar{margin-bottom:68px}
+      .links{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+      .disc{width:92px}
+      .section-label{margin-top:58px}
+    }
+
+    @media (max-width:350px){
+      .page{padding-left:14px;padding-right:14px}
+      .links{gap:14px 4px}
+      .disc{width:72px}
+      .label{font-size:9.5px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto!important;transition:none!important}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="monogram" aria-label="LEVORA">L</div>
+      <a class="instagram-top" href="https://www.instagram.com/albertleonhair/" target="_blank" rel="noopener noreferrer" data-meta-event="InstagramClick" data-service="instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.6" r=".7" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+    </header>
+
+    <section class="hero" aria-labelledby="title">
+      <div class="eyebrow">Hair Studio</div>
+      <h1 id="title">LEVORA</h1>
+      <a class="handle" href="https://www.instagram.com/albertleonhair/" target="_blank" rel="noopener noreferrer">@albertleonhair</a>
+      <div class="hero-copy">Tu próxima transformación empieza con una valoración.</div>
+      <p class="hero-sub">Cuéntanos qué quieres lograr y te orientamos por WhatsApp para encontrar el servicio ideal para ti.</p>
+
+      <a class="primary" href="https://wa.me/573115554665?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Albert%20Le%C3%B3n%20Hair%20y%20quiero%20solicitar%20una%20valoraci%C3%B3n%20para%20mi%20cabello." target="_blank" rel="noopener noreferrer" data-meta-event="LeadIntent" data-service="valoracion" aria-label="Solicitar valoración por WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4A8.4 8.4 0 1 1 20.5 11.7Zm-4.7 2.1c-.2-.1-1.4-.7-1.6-.7-.2-.1-.4-.1-.6.2-.2.2-.6.7-.7.9-.1.1-.3.2-.5.1-1.5-.6-2.6-1.5-3.5-2.8-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.2-.5.1-.1 0-.3 0-.4L8.9 7.9c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.7.1.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.2-.3-.2-.8-.4Z"/></svg>
+        Solicitar valoración
+      </a>
+    </section>
+
+    <div class="section-label">¿Qué estás buscando?</div>
+
+    <nav class="links" aria-label="Servicios y enlaces">
+      <a class="service" href="https://wa.me/573115554665?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Albert%20Le%C3%B3n%20Hair%20y%20quiero%20agendar%20una%20cita." target="_blank" rel="noopener noreferrer" data-meta-event="WhatsAppClick" data-service="agenda" aria-label="Agendar cita por WhatsApp">
+        <span class="disc"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="9" y="11" width="22" height="20" rx="3"/><path d="M14 8v6M26 8v6M9 17h22M15 23h4M22 23h4"/></svg></span>
+        <span class="label">Agenda</span>
+      </a>
+
+      <a class="service" href="https://wa.me/573115554665?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Albert%20Le%C3%B3n%20Hair%20y%20quiero%20informaci%C3%B3n%20sobre%20color%2C%20balayage%20o%20correcci%C3%B3n%20de%20color." target="_blank" rel="noopener noreferrer" data-meta-event="WhatsAppClick" data-service="color" aria-label="Consultar servicio de color por WhatsApp">
+        <span class="disc"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M28 8 17 19M27 7l4 4-3.5 3.5-4-4zM23.5 10.5 17 17M9 22h12a6 6 0 0 1-12 0Z"/><path d="M9 22c1.5-1 4-1.5 6-1.5s4.5.5 6 1.5"/></svg></span>
+        <span class="label">Color</span>
+      </a>
+
+      <a class="service" href="https://www.instagram.com/albertleonhair/" target="_blank" rel="noopener noreferrer" data-meta-event="InstagramClick" data-service="resultados" aria-label="Ver resultados en Instagram">
+        <span class="disc"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="8" y="10" width="24" height="20" rx="3"/><circle cx="20" cy="20" r="5"/><path d="m10 28 7-6 5 4 4-4 6 5"/></svg></span>
+        <span class="label">Resultados</span>
+      </a>
+
+      <a class="service" href="https://wa.me/573115554665?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Albert%20Le%C3%B3n%20Hair%20y%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener noreferrer" data-meta-event="WhatsAppClick" data-service="productos" aria-label="Consultar productos por WhatsApp">
+        <span class="disc"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 12h12l2 19H12l2-19Z"/><path d="M16 12c0-3 1.5-5 4-5s4 2 4 5M16 20h8"/></svg></span>
+        <span class="label">Productos</span>
+      </a>
+
+      <a class="service" href="https://wa.me/573115554665?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Albert%20Le%C3%B3n%20Hair%20y%20quiero%20agendar%20un%20servicio%20de%20maquillaje." target="_blank" rel="noopener noreferrer" data-meta-event="WhatsAppClick" data-service="maquillaje" aria-label="Agendar maquillaje por WhatsApp">
+        <span class="disc"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="16" cy="18" r="7"/><path d="M16 14v8M12 18h8M25 30l1-9a2 2 0 0 1 2-1.8h.4a2 2 0 0 1 2 1.8l-1 9zM25.5 27h4"/></svg></span>
+        <span class="label">Maquillaje</span>
+      </a>
+
+      <a class="service" href="https://wa.me/573115554665?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Albert%20Le%C3%B3n%20Hair%20y%20tengo%20una%20consulta.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener noreferrer" data-meta-event="WhatsAppClick" data-service="consulta" aria-label="Hacer una consulta por WhatsApp">
+        <span class="disc"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 11h22v15H18l-6 5v-5H9z"/><path d="M14 18h12M14 22h8"/></svg></span>
+        <span class="label">Consulta</span>
+      </a>
+    </nav>
+
+    <div class="trust">
+      <strong>Atención personalizada</strong>
+      <span>Selecciona el servicio que te interesa y WhatsApp abrirá con el mensaje listo para que podamos orientarte.</span>
+    </div>
+
+    <footer>LEVORA · Albert León Hair · Agenda por WhatsApp</footer>
+  </main>
+
+  <script>
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('[data-meta-event]');
+      if (!link) return;
+
+      const eventName = link.dataset.metaEvent;
+      const service = link.dataset.service || '';
+
+      // Preparado para Meta Pixel. Si fbq no está instalado, no interfiere con el enlace.
+      if (typeof window.fbq === 'function') {
+        window.fbq('trackCustom', eventName, { service: service });
+      }
+    });
+  </script>
+</body>
+</html>
